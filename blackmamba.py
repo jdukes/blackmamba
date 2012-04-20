@@ -4,7 +4,11 @@ import time
 import errno
 import ssl
 from Queue import Queue
-import adns # requires libadns1, on ubuntu: apt-get install python-adns
+try:
+	import adns
+except ImportError:
+	print ("requires libadns1, on ubuntu: apt-get install python-adns")
+	raise
 
 #### Configuration ####
 
